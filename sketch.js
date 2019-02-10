@@ -8,7 +8,13 @@ let xspeed = 1;
 let yspeed = 1;
 
 function preload() {
-  //  img = loadImage('dvd.png');
+
+}
+
+function updateScore() {
+    fill("black")
+    textSize(32);
+    text(score, 10, 30);
 }
 
 function setup() {
@@ -27,7 +33,6 @@ function newApple() {
 }
 
 function gotApple() {
-   // console.log("s")
     if (x <= xapple + 10 && x >= xapple -10 && y <= yapple + 10 && y >= yapple -10) {
         
         score += 10;
@@ -40,6 +45,7 @@ function gotApple() {
 function draw() {
 
     clear();
+    updateScore();
     //output apple in fixed location
     fill("red");
     rect(xapple,yapple, 10, 10);
