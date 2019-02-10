@@ -45,6 +45,8 @@ function gotApple() {
 function draw() {
 
     clear();
+    fill("white")
+rect(1, 1, width - 2, height - 2)
     updateScore();
     //output apple in fixed location
     fill("red");
@@ -60,12 +62,12 @@ function draw() {
     y = y + yspeed;
 
     //get cursor to bounce off walls
-    if (x >= width || x <= 0) {
+    if (x >= width-10 || x <= 0) {
         xspeed = xspeed * -1;
         tint(random(255), random(255), random(255));
     }
 
-    if (y  >= height || y <= 0) {
+    if (y  >= height-10 || y <= 0) {
         yspeed = yspeed * -1;
         tint(0, 153, 204);
         tint(random(255), random(255), random(255));
