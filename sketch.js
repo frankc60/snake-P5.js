@@ -26,6 +26,10 @@ function setup() {
     newApple();
 }
 
+function lengthenTail() {
+    x2 = x2 - 10;
+}
+
 function newApple() {
     xapple = random(width - 20);
     yapple = random(height - 20);
@@ -36,6 +40,7 @@ function gotApple() {
     if (x <= xapple + 10 && x >= xapple -10 && y <= yapple + 10 && y >= yapple -10) {
         
         score += 10;
+        lengthenTail();
         newApple();
         console.log("got apple! score: " + score);
     }
@@ -46,7 +51,7 @@ function draw() {
 
     clear();
     fill("white")
-rect(1, 1, width - 2, height - 2)
+    rect(1, 1, width - 2, height - 2)
     updateScore();
     //output apple in fixed location
     fill("red");
